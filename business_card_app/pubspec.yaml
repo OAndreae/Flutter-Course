@@ -1,0 +1,30 @@
+name: business_card_app
+description: A new Flutter project.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=2.17.3 <3.0.0'
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+  fonts:
+    - family: DM Serif Display
+      fonts:
+        - asset: assets/fonts/DMSerifDisplay-Regular.ttf
+        - asset: assets/fonts/DMSerifDisplay-Italic.ttf
+          style: italic
+    - family: Open Sans
+      fonts:
+        - asset: assets/fonts/OpenSans-VariableFont.ttf
+        - asset: assets/fonts/OpenSans-Italic-VariableFont.ttf
+          style: italic
