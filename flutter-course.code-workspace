@@ -11,6 +11,10 @@
 		},
 		{
 			"path": "i_am_fast"
+		},
+		{
+			"path": "genie_adviser"
 		}
 	],
+	"settings": {},
 }
