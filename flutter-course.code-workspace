@@ -14,7 +14,13 @@
 		},
 		{
 			"path": "genie_adviser"
-		}
+		},
+		{
+			"path": "xylophone-flutter"
+		},
+		{
+			"path": "quizzler-flutter"
+		},
 	],
 	"settings": {},
 }
