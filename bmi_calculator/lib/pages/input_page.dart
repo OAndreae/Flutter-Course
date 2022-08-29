@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/bmi_calculator.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/pages/results_page.dart';
 import 'package:flutter/material.dart';
@@ -86,35 +87,34 @@ class _InputPageState extends State<InputPage> {
             ),
           ),
           Expanded(
-            child: Row(
-              children: [
-                Expanded(
-                  child: ReusableCard(
-                    child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-                      Text('MASS', style: kLabelTextStyle),
-                      ValueAndUnit(
-                        value: _mass,
-                        unit: 'kg',
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          RoundIconButton(
-                            icon: FontAwesomeIcons.minus,
-                            onPressed: () => setState(() => _mass > 0 ? _mass-- : 0),
-                          ),
-                          SizedBox(width: 10.0),
-                          RoundIconButton(
-                            icon: FontAwesomeIcons.plus,
-                            onPressed: () => setState(() => _mass++),
-                          ),
-                        ],
-                      ),
-                    ]),
-                  ),
+            child: Row(children: [
+              Expanded(
+                child: ReusableCard(
+                  child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+                    Text('MASS', style: kLabelTextStyle),
+                    ValueAndUnit(
+                      value: _mass,
+                      unit: 'kg',
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.minus,
+                          onPressed: () => setState(() => _mass > 0 ? _mass-- : 0),
+                        ),
+                        SizedBox(width: 10.0),
+                        RoundIconButton(
+                          icon: FontAwesomeIcons.plus,
+                          onPressed: () => setState(() => _mass++),
+                        ),
+                      ],
+                    ),
+                  ]),
                 ),
-                Expanded(
-                    child: ReusableCard(
+              ),
+              Expanded(
+                child: ReusableCard(
                   child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
                     Text('AGE', style: kLabelTextStyle),
                     ValueAndUnit(value: _age, unit: 'yrs'),
@@ -133,13 +133,16 @@ class _InputPageState extends State<InputPage> {
                       ],
                     ),
                   ]),
-                )),
-              ],
-            ),
+                ),
+              ),
+            ]),
           ),
           BottomButton(
             text: 'CALCULATE',
-            onPressed: () => Navigator.push(context, MaterialPageRoute(builder: ((context) => ResultsPage()))),
+            onPressed: () {
+              BmiCalculator calc = new BmiCalculator(mass: _mass.toDouble(), height: _height.toDouble());
+              Navigator.push(context, MaterialPageRoute(builder: ((context) => ResultsPage(bmi: calc.getBmi(), interpretation: calc.getInterpretation(), result: calc.getResult(),))));
+            },
           )
         ],
       ),
