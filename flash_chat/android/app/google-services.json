@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "450350240893",
+    "project_id": "flash-chat-firebase-sample",
+    "storage_bucket": "flash-chat-firebase-sample.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450350240893:android:3a9a649960b0039242cd14",
+        "android_client_info": {
+          "package_name": "com.oliverandreae.flashchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "450350240893-isg50iv5ruk8e44mfsej6r4j9c4si3jm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCgwsT5sa10TiPNOTnuTtTX3y5na1xPbpE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "450350240893-isg50iv5ruk8e44mfsej6r4j9c4si3jm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
